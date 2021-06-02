@@ -3,7 +3,7 @@ package model;
 public class Room extends Service {
     protected String freeService;
 
-    public Room(String id , String serviceName , double usableArea , double rentalCost , int maxNumberOfPeople , String rentalType , String freeService) {
+    public Room(String id , String serviceName , String usableArea , String rentalCost , String maxNumberOfPeople , String rentalType , String freeService) {
         super(id , serviceName , usableArea , rentalCost , maxNumberOfPeople , rentalType);
         this.freeService = freeService;
     }
@@ -33,4 +33,6 @@ public class Room extends Service {
     public void showInfo() {
 
     }
+
+
 }

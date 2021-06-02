@@ -1,6 +1,6 @@
 package model;
 
-public class House extends Service {
+public class House extends Service  {
     private String roomStandard;
     private String amenitie;
     private int numberOfFloors;
@@ -13,6 +13,10 @@ public class House extends Service {
         this.roomStandard = roomStandard;
         this.amenitie = amenitie;
         this.numberOfFloors = numberOfFloors;
+    }
+
+    public House(String string , String string1 , String string2 , String string3 , String string4 , String string5 , String string6 , String string7 , String string8) {
+        super(id , serviceName , usableArea , rentalCost , maxNumberOfPeople , rentalType);
     }
 
     public String getRoomStandard() {

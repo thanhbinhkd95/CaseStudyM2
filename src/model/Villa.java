@@ -17,6 +17,10 @@ public class Villa extends Service {
         this.numberOfFloors = numberOfFloors;
     }
 
+    public Villa(String string , String serviceName , String s , String string1 , String s1 , String rentalType , String roomStandard , String amenities , String string2 , String s2) {
+        super(id , serviceName , usableArea , rentalCost , maxNumberOfPeople , rentalType);
+    }
+
     public String getRoomStandard() {
         return roomStandard;
     }
@@ -69,4 +73,5 @@ public class Villa extends Service {
     public void showInfo() {
 
     }
+
 }

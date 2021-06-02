@@ -1,12 +1,9 @@
 package model;
 
-import java.io.Serializable;
-import java.time.LocalDate;
-
-public class Employee implements Comparable<Customer> {
+public class Employee implements Comparable<Employee> {
     private String idEmployee;
     private String nameEmployee;
-    private LocalDate birthday;
+    private String birthDay;
     private String identityCardNumber;
     private String phoneNumber;
     private String email;
@@ -15,12 +12,12 @@ public class Employee implements Comparable<Customer> {
     private Double salary;
     private String workingDepartment;
 
-    public Employee(String idEmployee , String nameEmployee , LocalDate birthday ,
+    public Employee(String idEmployee , String nameEmployee , String birthDay ,
                     String identityCardNumber , String phoneNumber , String email ,
                     String qualifications , String position , Double salary , String workingDepartment) {
         this.idEmployee = idEmployee;
         this.nameEmployee = nameEmployee;
-        this.birthday = birthday;
+        this.birthDay = birthDay;
         this.identityCardNumber = identityCardNumber;
         this.phoneNumber = phoneNumber;
         this.email = email;
@@ -46,12 +43,12 @@ public class Employee implements Comparable<Customer> {
         this.nameEmployee = nameEmployee;
     }
 
-    public LocalDate getBirthday() {
-        return birthday;
+    public String getBirthday() {
+        return birthDay;
     }
 
-    public void setBirthday(LocalDate birthday) {
-        this.birthday = birthday;
+    public void setBirthday(String birthDay) {
+        this.birthDay = birthDay;
     }
 
     public String getIdentityCardNumber() {
@@ -115,7 +112,7 @@ public class Employee implements Comparable<Customer> {
         return "Employee{" +
                 "idEmployee='" + idEmployee + '\'' +
                 ", nameEmployee='" + nameEmployee + '\'' +
-                ", birthday=" + birthday +
+                ", birthDay=" + birthDay +
                 ", identityCardNumber='" + identityCardNumber + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", email='" + email + '\'' +
@@ -127,14 +124,15 @@ public class Employee implements Comparable<Customer> {
     }
 
     @Override
-    public int compareTo(Customer o) {
+    public int compareTo(Employee o) {
         {
             int result = this.nameEmployee.compareTo(o.nameEmployee);
-            if (result == 0){
-                int yearCustomerFirst = Integer.parseInt(this.dateOfBirth.split("/")[2]);
-                int yearCustomerSecond = Integer.parseInt(o.dateOfBirth.split("/")[2]);
+            if (result == 0) {
+                int yearCustomerFirst = Integer.parseInt(this.birthDay.split("/")[2]);
+                int yearCustomerSecond = Integer.parseInt(o.birthDay.split("/")[2]);
                 result = yearCustomerFirst - yearCustomerSecond;
+            }
+            return 0;
         }
-        return 0;
     }
 }

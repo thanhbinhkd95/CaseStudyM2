@@ -13,7 +13,7 @@ public class Customer implements Comparable<Customer> {
     private String address;
     Service serviceOfCustomer;
 
-    public Customer() {
+    public Customer(String string , String s , String string1 , String s1 , String string2 , String s2 , String string3 , String s3) {
     }
 
     public Customer(String idCustomer , String customerName , String birthday ,

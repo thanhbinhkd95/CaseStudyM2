@@ -2,7 +2,9 @@ package model;
 
 /*import java.io.Serializable;*/
 
-public abstract class Service {
+import java.io.Serializable;
+
+public abstract class Service implements Serializable {
     public String id;
     public String serviceName;
     public double usableArea;
@@ -19,6 +21,10 @@ public abstract class Service {
         this.rentalCost = rentalCost;
         this.maxNumberOfPeople = maxNumberOfPeople;
         this.rentalType = rentalType;
+    }
+
+    public Service(String id , String serviceName , String usableArea , String rentalCost , String maxNumberOfPeople , String rentalType) {
+
     }
 
     public String getId() {
@@ -69,4 +75,6 @@ public abstract class Service {
         this.rentalType = rentalType;
     }
     public abstract void showInfo();
+
+
 }
