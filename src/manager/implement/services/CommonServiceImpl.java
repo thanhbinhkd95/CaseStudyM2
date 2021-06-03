@@ -1,11 +1,16 @@
-package manager.implement;
+package manager.implement.services;
 
+import com.sun.xml.internal.bind.v2.model.core.ID;
+import commons.ValidateService;
 import models.Services;
 
 import java.util.Scanner;
 
-public class CommonServiceImpl{
-    void addCommonServiceInfo(Services services){
+public class CommonServiceImpl {
+    ValidateService validate = new ValidateService();
+
+    void addCommonServiceInfo(Services services) {
+
         Scanner input = new Scanner(System.in);
         System.out.println("ID: ");
         services.setId(input.nextLine());
@@ -25,4 +30,6 @@ public class CommonServiceImpl{
         System.out.println("Type of Rent: ");
         services.setTypeRental(input.nextLine());
     }
+
 }
+

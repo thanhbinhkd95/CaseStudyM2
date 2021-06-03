@@ -1,7 +1,7 @@
 package views;
 
 import controllers.MainController;
-import controllers.ServiceController;
+import controllers.services.ServiceController;
 
 import java.util.Scanner;
 
@@ -26,6 +26,7 @@ public class Menu {
                 "4.\tBack to menu\n" +
                 "5.\tExit\n");
         Scanner input = new Scanner(System.in);
+
         switch (input.nextLine()){
             case "1":
                 ServiceController.addVillaService();
@@ -72,13 +73,13 @@ public class Menu {
                 ServiceController.showAllRoomServices();
                 break;
             case 4:
-                ServiceController.showAllServicesNotDuplicate("src/data/villas.csv");
+                ServiceController.showAllServicesNotDuplicate("src/data/Villa.CSV");
                 break;
             case 5:
-                ServiceController.showAllServicesNotDuplicate("src/data/houses.csv");
+                ServiceController.showAllServicesNotDuplicate("src/data/House.CSV");
                 break;
             case 6:
-                ServiceController.showAllServicesNotDuplicate("src/data/rooms.csv");
+                ServiceController.showAllServicesNotDuplicate("src/data/Room.CSV");
                 break;
             case 7:
                 MainController.processMain();

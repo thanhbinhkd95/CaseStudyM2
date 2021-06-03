@@ -1,5 +1,6 @@
-package manager.implement;
+package manager.implement.services;
 
+import manager.implement.services.CommonServiceImpl;
 import models.Services;
 import models.Room;
 import service.ServiceInterface;

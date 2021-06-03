@@ -17,8 +17,7 @@ public class FuncReadServicesFileCSV {
         String line = "";
         try {
             br = new BufferedReader(new FileReader(FuncWriteServicesFileCSV.FILE_PATH_VILLA));
-            while (line != null) {
-                line = br.readLine();
+            while ((line = br.readLine()) != null) {
                 String[] splitData = line.split(FuncWriteServicesFileCSV.COMMA_DELIMITER);
                 if (splitData[0].equals("ID")) {
                     continue;
@@ -36,16 +35,9 @@ public class FuncReadServicesFileCSV {
                 svc.setnumberOfFloor(Integer.parseInt(splitData[9]));
                 list.add(svc);
             }
+            br.close();
         } catch (Exception e) {
-            System.out.println(e.getMessage());
-            System.out.println("meo");
-        } finally {
-            try {
-                br.close();
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
-                System.out.println("meomeo");
-            }
+            e.printStackTrace();
         }
         return list;
     }

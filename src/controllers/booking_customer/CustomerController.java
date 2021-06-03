@@ -1,8 +1,9 @@
-package controllers;
+package controllers.booking_customer;
 
+import controllers.MainController;
 import models.Customer;
-import manager.implement.CustomerImpl;
-import manager.implement.FuncCustomerFileCSV;
+import manager.implement.customer.CustomerImpl;
+import commons.FuncWriteAndRead.FuncCustomerFileCSV;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -12,12 +13,12 @@ public class CustomerController {
         Scanner input = new Scanner(System.in);
         System.out.println(">>>>>>>>>>>>>>>> How many rooms customers do you want to add? ");
         int length = Integer.parseInt(input.nextLine());
-        ArrayList<Customer> customersList = FuncCustomerFileCSV.readFileCSV();
+        ArrayList<Customer> customersList = new ArrayList<>();
         for ( int i = 0; i < length; i++){
             Customer customer = CustomerImpl.addNewCustomer();
             customersList.add(customer);
         }
-        FuncCustomerFileCSV.writeFileCSV(customersList);
+        FuncCustomerFileCSV.writeFileCSV(customersList,true);
         MainController.processMain();
     }
 

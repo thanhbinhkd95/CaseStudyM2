@@ -1,5 +1,8 @@
 package controllers;
 
+import controllers.booking_customer.BookingController;
+import controllers.booking_customer.CustomerController;
+import controllers.employee.EmployeeController;
 import views.*;
 
 import java.util.Scanner;

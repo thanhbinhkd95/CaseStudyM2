@@ -1,21 +1,25 @@
-package controllers;
+package controllers.services;
 
 import commons.FuncWriteAndRead.FuncReadServicesFileCSV;
 import commons.FuncWriteAndRead.FuncWriteServicesFileCSV;
+import controllers.MainController;
+import manager.implement.services.HouseServiceImpl;
+import manager.implement.services.RoomServiceImpl;
+import manager.implement.services.VillaServiceImpl;
 import models.*;
 import service.ServiceInterface;
-import manager.implement.*;
 
 import java.util.*;
 
 public class ServiceController {
-    private static ServiceInterface villaService = new manager.implement.VillaServiceImpl();
-    private static ServiceInterface houseService = new manager.implement.HouseServiceImpl();
-    private static ServiceInterface roomService = new manager.implement.RoomServiceImpl();
+    private static ServiceInterface villaService = new VillaServiceImpl();
+    private static ServiceInterface houseService = new HouseServiceImpl();
+    private static ServiceInterface roomService = new RoomServiceImpl();
 
     //=============================== ADD NEW SERVICE ===============================
     public static void addVillaService(){
         Scanner input = new Scanner(System.in);
+
         System.out.println(">>>>>>>>>>>>>>>> How many villa services do you want to add? ");
         int length = Integer.parseInt(input.nextLine());
         List<Villa> villaList = FuncReadServicesFileCSV.readFileCSVVilla();

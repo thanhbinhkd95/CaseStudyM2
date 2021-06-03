@@ -1,6 +1,9 @@
-package controllers;
+package controllers.booking_customer;
 
-import manager.implement.FuncBookingFileCSV;
+import commons.FuncWriteAndRead.FuncBookingFileCSV;
+import commons.FuncWriteAndRead.FuncCustomerFileCSV;
+import controllers.MainController;
+import controllers.services.ServiceController;
 import models.*;
 import commons.FuncWriteAndRead.*;
 
@@ -11,7 +14,7 @@ import java.util.Scanner;
 public class BookingController {
     public static void addnewBooking(){
         Scanner input = new Scanner(System.in);
-        ArrayList<Customer> customers = manager.implement.FuncCustomerFileCSV.readFileCSV();
+        ArrayList<Customer> customers = FuncCustomerFileCSV.readFileCSV();
 
         System.out.println("Sorting by NAME...");
         for(Customer element : customers){

@@ -1,4 +1,4 @@
-package manager.implement;
+package manager.implement.customer;
 
 import models.Customer;
 
@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class CustomerImpl {
     public static Customer addNewCustomer(){
+
         Scanner input = new Scanner(System.in);
         Customer customer = new Customer();
 

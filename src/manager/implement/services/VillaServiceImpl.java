@@ -1,11 +1,15 @@
-package manager.implement;
+package manager.implement.services;
+import manager.implement.services.CommonServiceImpl;
 import models.*;
 import service.ServiceInterface;
 import java.util.Scanner;
 
 public class VillaServiceImpl extends CommonServiceImpl implements ServiceInterface {
     @Override
+
     public Services addNewService() {
+
+
         Scanner input = new Scanner(System.in);
         Services villa = new Villa();
 

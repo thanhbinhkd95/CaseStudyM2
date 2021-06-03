@@ -1,4 +1,4 @@
-package manager.implement;
+package commons.FuncWriteAndRead;
 
 import models.Employee;
 
@@ -12,7 +12,7 @@ public class FuncEmployeeFileCSV {
     private static final String COMMA_DELIMITER = ",";
     private static final String NEW_LINE_SEPARATOR = "\n";
     private static final String FILE_HEADER_EMPLOYEE = "ID,Name,Birthday,ID Card,Phone Number,Email,Education Level,Position,Salary,";
-    static final String FILE_PATH_EMPLOYEE = "src/data/employee.csv";
+    static final String FILE_PATH_EMPLOYEE = "src/data/Employee.csv";
 
     public static void writeFileCSV(List<Employee> list){
         FileWriter fileWriter = null;
