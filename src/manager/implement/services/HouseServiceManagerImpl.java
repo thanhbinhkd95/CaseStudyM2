@@ -6,7 +6,7 @@ import models.House;
 import service.ServiceInterface;
 import java.util.Scanner;
 
-public class HouseServiceImpl extends CommonServiceImpl implements ServiceInterface {
+public class HouseServiceManagerImpl extends CommonServiceImpl implements ServiceInterface {
     @Override
     public Services addNewService() {
         Scanner input = new Scanner(System.in);

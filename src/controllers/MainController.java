@@ -1,8 +1,8 @@
 package controllers;
 
-import controllers.booking_customer.BookingController;
-import controllers.booking_customer.CustomerController;
-import controllers.employee.EmployeeController;
+import manager.BookingManager;
+import manager.EmployeeManager;
+import manager.CustomerManager;
 import views.*;
 
 import java.util.Scanner;
@@ -29,16 +29,16 @@ public class MainController {
                 Menu.menuShowServices();
                 break;
             case "3":
-                CustomerController.addNewCustomer();
+                CustomerManager.addNewCustomer();
                 break;
             case "4":
-                CustomerController.showInformationCustomers();
+                CustomerManager.showInformationCustomers();
                 break;
             case "5":
-                BookingController.addnewBooking();
+                BookingManager.addnewBooking();
                 break;
             case "6":
-                EmployeeController.showEmployeesInfo();
+                EmployeeManager.showEmployeesInfo();
                 break;
             case "7":
                 System.exit(0);

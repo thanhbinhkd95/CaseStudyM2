@@ -3,18 +3,18 @@ package controllers.services;
 import commons.FuncWriteAndRead.FuncReadServicesFileCSV;
 import commons.FuncWriteAndRead.FuncWriteServicesFileCSV;
 import controllers.MainController;
-import manager.implement.services.HouseServiceImpl;
-import manager.implement.services.RoomServiceImpl;
-import manager.implement.services.VillaServiceImpl;
+import manager.implement.services.HouseServiceManagerImpl;
+import manager.implement.services.RoomServiceManagerImpl;
+import manager.implement.services.VillaServiceManagerImpl;
 import models.*;
 import service.ServiceInterface;
 
 import java.util.*;
 
 public class ServiceController {
-    private static ServiceInterface villaService = new VillaServiceImpl();
-    private static ServiceInterface houseService = new HouseServiceImpl();
-    private static ServiceInterface roomService = new RoomServiceImpl();
+    private static ServiceInterface villaService = new VillaServiceManagerImpl();
+    private static ServiceInterface houseService = new HouseServiceManagerImpl();
+    private static ServiceInterface roomService = new RoomServiceManagerImpl();
 
     //=============================== ADD NEW SERVICE ===============================
     public static void addVillaService(){

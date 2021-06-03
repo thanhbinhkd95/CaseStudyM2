@@ -7,7 +7,6 @@ import models.Services;
 import java.util.Scanner;
 
 public class CommonServiceImpl {
-    ValidateService validate = new ValidateService();
 
     void addCommonServiceInfo(Services services) {
 

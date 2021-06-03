@@ -4,7 +4,7 @@ import models.*;
 import service.ServiceInterface;
 import java.util.Scanner;
 
-public class VillaServiceImpl extends CommonServiceImpl implements ServiceInterface {
+public class VillaServiceManagerImpl extends CommonServiceImpl implements ServiceInterface {
     @Override
 
     public Services addNewService() {

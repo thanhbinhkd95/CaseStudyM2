@@ -6,7 +6,7 @@ import models.Room;
 import service.ServiceInterface;
 import java.util.Scanner;
 
-public class RoomServiceImpl extends CommonServiceImpl implements ServiceInterface {
+public class RoomServiceManagerImpl extends CommonServiceImpl implements ServiceInterface {
     @Override
     public Services addNewService() {
         Scanner input = new Scanner(System.in);

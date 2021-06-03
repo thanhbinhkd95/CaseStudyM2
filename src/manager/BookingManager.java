@@ -1,4 +1,4 @@
-package controllers.booking_customer;
+package manager;
 
 import commons.FuncWriteAndRead.FuncBookingFileCSV;
 import commons.FuncWriteAndRead.FuncCustomerFileCSV;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class BookingController {
+public class BookingManager {
     public static void addnewBooking(){
         Scanner input = new Scanner(System.in);
         ArrayList<Customer> customers = FuncCustomerFileCSV.readFileCSV();

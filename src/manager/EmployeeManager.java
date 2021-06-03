@@ -1,4 +1,4 @@
-package controllers.employee;
+package manager;
 
 import controllers.MainController;
 import models.Employee;
@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class EmployeeController {
+public class EmployeeManager {
     public static void showEmployeesInfo(){
         List<Employee> employeeList = FuncEmployeeFileCSV.readFileCSV();
         Map<String,Employee> map = new HashMap<>();
