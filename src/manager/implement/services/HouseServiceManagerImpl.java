@@ -1,9 +1,11 @@
 package manager.implement.services;
 
+import library.Library;
 import manager.implement.services.CommonServiceImpl;
 import models.Services;
 import models.House;
 import service.ServiceInterface;
+
 import java.util.Scanner;
 
 public class HouseServiceManagerImpl extends CommonServiceImpl implements ServiceInterface {
@@ -15,13 +17,22 @@ public class HouseServiceManagerImpl extends CommonServiceImpl implements Servic
         super.addCommonServiceInfo(house);
 
         System.out.println("Standard of Room: ");
-        ((House) house).setRoomStandard(input.nextLine());
+        String standard = input.nextLine();
+        while (!Library.validateRoomStandard(standard)) {
+            System.out.println("Nhập lại tiêu chuẩn phòng:");
+            standard = input.nextLine();
+        }
+        ( (House) house ).setRoomStandard(standard);
 
         System.out.println("Facilites: ");
-        ((House) house).setFacilites(input.nextLine());
+        ( (House) house ).setFacilites(input.nextLine());
 
         System.out.println("Number Of Floor: ");
-        ((House) house).setnumberOfFloor(Integer.parseInt(input.nextLine()));
+        String houseFloor = input.nextLine();
+        while (!Library.validateNumberOfFloors(houseFloor)) {
+            System.err.println("Số tầng không đúng quy định");
+        }
+        ( (House) house ).setnumberOfFloor(Integer.parseInt(houseFloor));
 
         return house;
     }

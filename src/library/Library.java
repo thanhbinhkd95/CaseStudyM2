@@ -93,7 +93,12 @@ public class Library {
         LocalDate birthday = LocalDate.of(year, month, day);
         return birthday.isBefore(LocalDate.now().minusYears(18));
     }
-
+    public static boolean validatePrice(float price) {
+        return price > 0;
+    }
+    public boolean validateArea(float area) {
+        return area > 30f;
+    }
     public static void main(String[] args) {
         System.out.println(validateGender("UNKnoW"));
     }

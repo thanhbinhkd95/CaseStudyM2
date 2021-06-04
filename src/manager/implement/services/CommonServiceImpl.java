@@ -1,7 +1,6 @@
 package manager.implement.services;
 
-import com.sun.xml.internal.bind.v2.model.core.ID;
-import commons.ValidateService;
+import library.Library;
 import models.Services;
 
 import java.util.Scanner;
@@ -15,19 +14,36 @@ public class CommonServiceImpl {
         services.setId(input.nextLine());
 
         System.out.println("Service Name: ");
-        services.setServiceName(input.nextLine());
+        String serviceName = input.nextLine();
+        while (!Library.validateNameService(serviceName)){
+            System.err.println("Nhập lại đi bạn");
+        }
+        services.setServiceName(serviceName);
 
         System.out.println("Area of Use ");
-        services.setAreaUsing(Float.parseFloat(input.nextLine()));
+        String area = input.nextLine();
+        services.setAreaUsing(Float.parseFloat(area));
 
         System.out.println("Rental Fee ");
-        services.setrentalFee(Double.parseDouble(input.nextLine()));
+        float fee = Float.parseFloat(input.nextLine());
+        while (!Library.validatePrice(fee)){
+            System.err.println("Giá tiền không hợp ní");
+        }
+        services.setrentalFee(Float.parseFloat(String.valueOf(fee)));
 
         System.out.println("Max Occupancy: ");
-        services.setmaxOccupancy(Integer.parseInt(input.nextLine()));
+        String max = input.nextLine();
+        while (!Library.validateMaxOfPeople(max)){
+            System.err.println("Không đúng số người quy định");
+        }
+        services.setmaxOccupancy(Integer.parseInt(max));
 
         System.out.println("Type of Rent: ");
-        services.setTypeRental(input.nextLine());
+        String type = input.nextLine();
+        while (!Library.validateRentalType(type)){
+            System.err.println("Sai định dạng");
+        }
+        services.setTypeRental(type);
     }
 
 }

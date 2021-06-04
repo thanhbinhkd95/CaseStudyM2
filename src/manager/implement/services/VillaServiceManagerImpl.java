@@ -1,12 +1,14 @@
 package manager.implement.services;
-import manager.implement.services.CommonServiceImpl;
+
+import library.Library;
 import models.*;
 import service.ServiceInterface;
+
 import java.util.Scanner;
 
 public class VillaServiceManagerImpl extends CommonServiceImpl implements ServiceInterface {
-    @Override
 
+    @Override
     public Services addNewService() {
 
 
@@ -16,17 +18,30 @@ public class VillaServiceManagerImpl extends CommonServiceImpl implements Servic
         super.addCommonServiceInfo(villa);
 
         System.out.println("Standard of Room: ");
-        ((Villa) villa).setRoomStandard(input.nextLine());
+        String roomStandard = input.nextLine();
+        while (!Library.validateRoomStandard(roomStandard)) {
+            System.out.println("Nhập lại tiêu chuẩn phòng:");
+            roomStandard = input.nextLine();
+        }
+        ( (Villa) villa ).setRoomStandard(roomStandard);
 
         System.out.println("Facilites: ");
-        ((Villa) villa).setFacilites(input.nextLine());
+        ( (Villa) villa ).setFacilites(input.nextLine());
 
         System.out.println("Area of SwimmingPool: ");
-        ((Villa) villa).setAreaSwimmingPool(Float.parseFloat(input.nextLine()));
+        String areaPool = input.nextLine();
+        while (!Library.validateUsablePool(areaPool)) {
+            System.err.println("Hồ bơi sai kích thước");
+        }
+        ( (Villa) villa ).setAreaSwimmingPool(Float.parseFloat(areaPool));
 
         System.out.println("Number Of Floor: ");
-        ((Villa) villa).setnumberOfFloor(Integer.parseInt(input.nextLine()));
+        String floor = input.nextLine();
+        while (!Library.validateNumberOfFloors(floor)) {
+            System.err.println("Số tầng không đúng quy định");
+        }
+        ( (Villa) villa ).setnumberOfFloor(Integer.parseInt(floor));
 
-    return villa;
+        return villa;
     }
 }
